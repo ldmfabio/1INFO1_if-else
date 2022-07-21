@@ -8,12 +8,24 @@
     */
 
     //Entrada
-
+    const precoLitro = Number(prompt("Informe o preço do litro de combustível:"))
+    const litrosCombustivel = Number(prompt("Informe quantos litros de combustível são necessários:"))
+    const precoTranportePublico = Number(prompt("Informe o preço do transporte público:"))
 
     //Processamento
-
+    let mensagemFinal = "O meio de transporte mais barato é o "
+    const totalCarro = precoLitro * litrosCombustivel
+    if (totalCarro > precoTranportePublico) {
+        mensagemFinal += `Transporte Público, e custará diariamente R$ ${precoTranportePublico.toFixed(2)}`
+    }
+    else if (precoTranportePublico > totalCarro) {
+        mensagemFinal += `Veículo Próprio, e custará diariamente R$ ${totalCarro.toFixed(2)}`
+    }
+    else {
+        mensagemFinal = `Os meios de transporte (Carro ou Transporte Público) possuem o mesmo custo, que é de R$ ${totalCarro.toFixed(2)}`
+    }
 
     //Saída
+    document.write(mensagemFinal)
 
-    
 </script>

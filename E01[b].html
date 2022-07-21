@@ -8,12 +8,20 @@
     */
 
     //Entrada
-
+    const precoOnibus = Number(prompt("Informe o custo da viagem usando ônibus:"))
+    const precoAviao = Number(prompt("Informe o custo da viagem usando avião:"))
+    const precoCarro = Number(prompt("Informe o custo da viagem usando carro:"))
 
     //Processamento
-
+    let mensagemFinal = "O meio de transporte mais barato é o "
+    if (precoOnibus > precoAviao && precoOnibus> precoCarro) {
+        mensagemFinal += `Ônibus, e custará ${precoOnibus.toFixed(2)}.`
+    }
+    else if (precoAviao > precoOnibus && precoAviao > precoCarro) {
+        mensagemFinal += `Avião, e custará ${precoAviao.toFixed(2)}.`
+    }
+    else mensagemFinal += `Carro, e custará ${precoCarro.toFixed(2)}.`
 
     //Saída
-
-    
+    document.write(mensagemFinal)    
 </script>

@@ -12,12 +12,21 @@
     */
 
     //Entrada
-
+    const remuneracaoMensal = Number(prompt("Informe a remuneração mensal:"))
 
     //Processamento
-
+    let impostoRenda = 0
+    let salarioFinal = 0
+    let valorDesconto = 0
+    if (remuneracaoMensal <= 2000) impostoRenda = 2
+    else if (remuneracaoMensal <= 4000) impostoRenda = 4
+    else if (remuneracaoMensal <= 6000) impostoRenda = 6
+    else impostoRenda = 7
+    
+    valorDesconto = remuneracaoMensal * (impostoRenda / 100)
+    salarioFinal = remuneracaoMensal - valorDesconto
 
     //Saída
-
+    document.write(`O salário final será de R$ ${salarioFinal.toFixed(2)}. O desconto do IR foi de ${impostoRenda}%, que equivale a R$ ${valorDesconto.toFixed(2)}`)
     
 </script>
